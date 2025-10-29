@@ -132,7 +132,7 @@ class UserController extends Controller
             session()->flash('message', 'Usuario eliminado exitosamente');
             return redirect()->route('user.index');
         } elseif ($response->status() == Response::HTTP_BAD_REQUEST) {
-            $errors = $response->json()['errors'] ?? ['No se pudo eliminar el producto'];
+            $errors = $response->json()['errors'] ?? ['No se pudo eliminar el usuario'];
             return redirect()->route('user.index')
                 ->withErrors($errors);
         } else {
