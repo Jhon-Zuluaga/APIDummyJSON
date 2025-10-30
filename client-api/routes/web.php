@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('auth.index');
+    return view('index');
 });
 
 // Rutas para la API USER
