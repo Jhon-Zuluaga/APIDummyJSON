@@ -42,13 +42,15 @@ class UserController extends Controller
         $url = env('URL_BASE_API', "https://dummyjson.com");
 
         $response = Http::acceptJson()->withToken(Session::get('token'))->post($url . '/users/add', [
-            'firstname' => $request->firstname,
+            'firstName' => $request->firstName,
             'age' => $request->age,
             'email' => $request->email,
             'phone' => $request->phone,
             'birthDate' => $request->birthDate,
-            'images' => $request->images
+            'image' => $request->image
         ]);
+
+        dd($request->all());
 
         if ($response->successful()) {
             session()->flash('message', 'Usuario creado exitoamente');
@@ -69,15 +71,26 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $url = env('URL_BASE_API', "https://dummyjson.com");
-        $response = Http::acceptJson()->withToken(Session::get('token'))->get($url . '/users/' . $id);
+
+        $response = Http::acceptJson()
+            ->withToken(Session::get('token'))
+            ->get($url . '/users/' . $id);
 
         if ($response->successful()) {
             $user = $response->json();
+            
+            // Formatear la fecha para el input type="date"
+            if (isset($user['birthDate'])) {
+                $user['birthDate'] = \Carbon\Carbon::parse($user['birthDate'])->format('Y-m-d');
+            }
+            
+
             return view('user.edit', compact('user'));
         } elseif ($response->status() == Response::HTTP_BAD_REQUEST) {
             $errors = $response->json()['errors'];
             return redirect()->route('user.index')
-                ->withInput()->withErrors($errors);
+                ->withInput()
+                ->withErrors($errors);
         } else {
             abort($response->status());
         }
@@ -127,7 +140,7 @@ class UserController extends Controller
             /*ver la respuesta del API
             Si quiere testearlo descomente la línea.
             */
-            //dd($response->json());
+            dd($response->json());
 
             session()->flash('message', 'Usuario eliminado exitosamente');
             return redirect()->route('user.index');

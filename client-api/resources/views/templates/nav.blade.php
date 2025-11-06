@@ -16,7 +16,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('index') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
@@ -26,18 +26,18 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Productos
+            Users
         </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1"
                     aria-expanded="true" aria-controls="collapse1">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Productos</span>
+                    <span>Usuarios</span>
                 </a>
                 <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Consultar</a>
-                        <a class="collapse-item" href="#">Crear</a>
+                        <a class="collapse-item" href="{{ route('user.index') }}">Consultar</a>
+                        <a class="collapse-item" href="{{ route('user.create') }}">Crear</a>
                     </div>
                 </div>
             </li>
