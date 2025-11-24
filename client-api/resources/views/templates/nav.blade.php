@@ -29,17 +29,34 @@
             Users
         </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1"
-                    aria-expanded="true" aria-controls="collapse1">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
+                    aria-expanded="true" aria-controls="collapseUsers">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Usuarios</span>
+                        <span>Usuarios</span>
                 </a>
-                <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('user.index') }}">Consultar</a>
-                        <a class="collapse-item" href="{{ route('user.create') }}">Crear</a>
+                    <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{ route('user.index') }}">Consultar</a>
+                            <a class="collapse-item" href="{{ route('user.create') }}">Crear</a>
+                        </div>
                     </div>
-                </div>
+            </li>
+
+        <div class="sidebar-heading">
+            Products
+        </div>
+            <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts"
+                    aria-expanded="true" aria-controls="collapseProducts">
+                    <i class="fas fa-fw fa-cog"></i>
+                        <span>Productos</span>
+                    </a>
+                        <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="{{ route('product.index') }}">Consultar</a>
+                                <a class="collapse-item" href="{{ route('product.create') }}">Crear</a>
+                            </div>
+                        </div>
             </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
