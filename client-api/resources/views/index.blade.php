@@ -19,10 +19,7 @@
                 * Products: /products (GET, POST, PUT, DELETE) -> <a href="https://dummyjson.com/docs/products" target="_blank">https://dummyjson.com/docs/products</a>
                 <br><br>
                 * Recipes: /recipes (GET, POST, PUT, DELETE) -> <a href="https://dummyjson.com/docs/recipes" target="_blank">https://dummyjson.com/docs/recipes</a>
-                <br><br>
-                * Posts: /posts (GET, POST, PUT, DELETE) -> <a href="https://dummyjson.com/docs/posts" target="_blank">https://dummyjson.com/docs/posts</a>
-                <br><br>
-                * Usuarios: /users (GET, POST, PUT, DELETE) -> <a href="https://dummyjson.com/docs/users" target="_blank">https://dummyjson.com/docs/users</a>
+                
             </p>
         </div>
 

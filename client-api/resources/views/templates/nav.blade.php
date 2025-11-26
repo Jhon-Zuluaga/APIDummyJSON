@@ -58,6 +58,25 @@
                             </div>
                         </div>
             </li>
+
+            <div class="sidebar-heading">
+            Recipes
+        </div>
+            <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecipes"
+                    aria-expanded="true" aria-controls="collapseRecipes">
+                    <i class="fas fa-fw fa-cog"></i>
+                        <span>Recetas</span>
+                    </a>
+                        <div id="collapseRecipes" class="collapse" aria-labelledby="headingRecipes" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="{{ route('recipe.index') }}">Consultar</a>
+                                <a class="collapse-item" href="{{ route('recipe.create') }}">Crear</a>
+                            </div>
+                        </div>
+            </li>
+
+            
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
 
